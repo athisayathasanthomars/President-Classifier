@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>President Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">President Classifier-1994 to 2025</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col" data-player="Anura Kumara Dissanayaka">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/anura.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase fs-1 card-title">Anura Kumara</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>            
+            <div class="col-lg-2 card-wrapper" data-player="Gotabaya Rajapaksa">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/gothapaya.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h5 class="text-uppercase card-title">Gotabaya Rajapaksa</h5>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="col-lg-2 card-wrapper" data-player="Mahinda Rajapaksa">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/mahintha.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h5 class="text-uppercase card-title">Mahinda Rajapaksa</h5>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="col-lg-2 card-wrapper" data-player="Chandrika Kumaratunga">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/chandrika.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Chandrika Kumaratunga</h5>
+                        </p>
+                    </div>
+                </div>
+        </div>
+
+            <div class="col-lg-2 card-wrapper" data-player="Maithripala Sirisena">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/maithiri.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Maithripala Sirisena</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>      
+
+            <div class="col-lg-2 card-wrapper" data-player="Ranil Wickremesinghe">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/ranil.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="text-uppercase card-title">Ranil</h5>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>President</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Anura Kumara Dissanayaka</td>
+                            <td id="score Anura Kumara Dissanayaka"></td>
+                        </tr>
+                        <tr>
+                            <td>Chandrika Kumaratunga</td>
+                            <td id="score Chandrika Kumaratunga"></td>
+                        </tr>
+                        <tr>
+                            <td>Gotabaya Rajapaksa</td>
+                            <td id="score Gotabaya Rajapaksa"></td>
+                        </tr>
+                        <tr>
+                            <td>Mahinda Rajapaksa</td>
+                            <td id="score Mahinda Rajapaksa"></td>
+                        </tr>
+                        <tr>
+                            <td>Maithripala Sirisena</td>
+                            <td id="score Maithripala Sirisena"></td>
+                        </tr>
+                        <tr>
+                            <td>Ranil Wickremesinghe</td>
+                            <td id="score Ranil Wickremesinghe"></td>
+                        </tr>
+                </table>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
